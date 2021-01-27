@@ -18,7 +18,6 @@ public class RemoveDuplicates {
             }
         }
 
-
         int[] results = new int[resultsMap.size()];
 
         int i =0;
