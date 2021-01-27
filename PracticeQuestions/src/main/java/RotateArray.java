@@ -12,11 +12,11 @@ public class RotateArray {
             j++;
             temp = j;
         }
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; temp < array.length; i++) {
             arrayResult[temp] = array[i];
             temp++;
-            if(temp==array.length)
-                break;
+//            if(temp==array.length)
+//                break;
         }
         return arrayResult;
 
