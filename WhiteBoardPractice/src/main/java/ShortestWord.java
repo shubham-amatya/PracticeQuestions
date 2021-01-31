@@ -3,7 +3,7 @@ public class ShortestWord {
         String[] words = sentence.split(" ");
         String shortest = words[0];
         for (int i = 0; i < words.length-1; i++) {
-            if(words[i].length()>words[i+i].length()){
+            if(words[i].length()>words[i+1].length()){
                 shortest = words[i+1];
             }
         }return shortest;
