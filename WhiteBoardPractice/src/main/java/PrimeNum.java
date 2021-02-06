@@ -1,7 +1,7 @@
 public class PrimeNum {
     //Write a Java program to check if a given number is prime or not.
 
-    public static boolean primeNumberFinder(int num){
+    public static boolean primeNumberFinder1(int num){
         if(num <=1){
             return false;
         }else if(num ==2 || num ==3 || num==5 || num ==7){
@@ -12,9 +12,21 @@ public class PrimeNum {
         } return false;
     }
 
+    public static boolean primeNumFinder2(int num){
+
+        if(num<=0){
+            return false;
+        }
+        for (int i = 2; i < num ; i++) {
+            if(num %i ==0){
+                return false;
+            }
+        } return true;
+    }
+
     public static void main(String[] args) {
-        int n = 9;
-        System.out.println(primeNumberFinder(n));
+        int n = 2;
+        System.out.println(primeNumFinder2(n));
     }
 
 }
