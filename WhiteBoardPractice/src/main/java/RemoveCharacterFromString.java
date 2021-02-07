@@ -14,15 +14,15 @@ public class RemoveCharacterFromString {
 //            characters.add(i, arrChar[i]);
 //        }
         for (int i = 0; i < arrChar.length; i++) {
-            if(arrChar[i]==remove){
+            if (arrChar[i] == remove) {
                 countCharToRemove++;
             }
-
-            for (int j = 0; j < arrChar.length-countCharToRemove; j++) {
-                if(arrChar[i]!=remove){
-                    output += arrChar[i];
+        }
+            for (int j = 0; j < arrChar.length; j++) {
+                if(arrChar[j]!=remove){
+                    output += arrChar[j];
                 }
-            }
+
         }
         return output;
     }
