@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Pangramic {
     //pangramic is a sentence which has all the alphabets from a-z only once
@@ -9,30 +10,33 @@ public class Pangramic {
             return false;
         }
 
-        str.replaceAll("\\s", "");
-        System.out.println(str);
-        char[] arr = str.toCharArray();
-
+        String withoutSpaces =  str.replaceAll("\\s", "");
+        System.out.println(withoutSpaces);
+        char[] arr = withoutSpaces.toCharArray();
         String result = "";
 
 
-
                 Arrays.sort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            result += arr[i];
+        System.out.println(arr);
+
+        HashMap<Character , Integer> map = new HashMap<>();
+
+        for (int i = 0; i < map.size() ; i++) {
+            if(map.containsKey(arr[i])){
+                map.put(arr[i], map.get(arr[i])+1);
+            }else{
+                map.put(arr[i], 1);
+            }
         }
 
+        for ( Character c: map.keySet()
+             ) {
+            result += c ;
+
+        }
+        System.out.println(result);
 
 
-
-//        for (int i = 0; i < arr.length-1; i++) {
-//            for (int j = 0; j <arr.length-1 ; j++) {
-//                if(arr[j]>arr[j+1]){
-//                    temp = arr[j];
-//                    arr[j] = arr[j+1];
-//                    arr[j+1] = temp;
-//                }
-//            }
 
             String expected = "abcdefghijklmnopqrstuvwxyz";
 
