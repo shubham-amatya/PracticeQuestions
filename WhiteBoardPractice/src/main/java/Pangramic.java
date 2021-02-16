@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Pangramic {
     //pangramic is a sentence which has all the alphabets from a-z only once
 
@@ -6,11 +8,22 @@ public class Pangramic {
         if(str.length()<26){
             return false;
         }
-        str.replaceAll("\\s", "");
-        char[] arr = str.toCharArray();
-        char temp;
 
-        char[] given = Arrays.sort(arr);
+        str.replaceAll("\\s", "");
+        System.out.println(str);
+        char[] arr = str.toCharArray();
+
+        String result = "";
+
+
+
+                Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            result += arr[i];
+        }
+
+
+
 
 //        for (int i = 0; i < arr.length-1; i++) {
 //            for (int j = 0; j <arr.length-1 ; j++) {
@@ -22,10 +35,10 @@ public class Pangramic {
 //            }
 
             String expected = "abcdefghijklmnopqrstuvwxyz";
-            //String given = arr.toString();
-            if(expected.equals(given)){
+
+            if(expected.equals(result)){
                 return true;
-            }
+
         }
         return false;
     }
