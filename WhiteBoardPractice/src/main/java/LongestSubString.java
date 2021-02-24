@@ -9,13 +9,17 @@ public class LongestSubString {
 
         // Result
         int res = 0;
-
+        String longestSubstring = "";
         for (int i = 0; i < n; i++) {
 
             // Note : Default values in visited are false
             boolean[] visited = new boolean[256];
 
             for (int j = i; j < n; j++) {
+
+                while(visited[str.charAt(j)] == false){
+                    longestSubstring += str.charAt(j);
+                }
 
                 // If current character is visited
                 // Break the loop
@@ -35,6 +39,6 @@ public class LongestSubString {
             // window
             visited[str.charAt(i)] = false;
         }
-        return res;
+        return longestSubstring;
     }
 }
