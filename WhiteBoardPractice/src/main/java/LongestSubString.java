@@ -2,43 +2,28 @@ public class LongestSubString {
 
     //given a string, find the longest substring without repeated characters
 
-    public static String longestSubstring(String str) {
+    public static int longestSubstring(String s) {
 
 
-        int n = str.length();
-
-        // Result
-        int res = 0;
-        String longestSubstring = "";
-        for (int i = 0; i < n; i++) {
-
-            // Note : Default values in visited are false
-            boolean[] visited = new boolean[256];
-
-            for (int j = i; j < n; j++) {
-
-                while(visited[str.charAt(j)] == false){
-                    longestSubstring += str.charAt(j);
+        String answer = "";
+        String temp = "";
+        int n = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (!temp.contains("" + s.charAt(i))) {
+                temp += s.charAt(i);
+                if (temp.length() > answer.length()) {
+                    answer = temp;
                 }
-
-                // If current character is visited
-                // Break the loop
-                if (visited[str.charAt(j)] == true)
-                    break;
-
-                    // Else update the result if
-                    // this window is larger, and mark
-                    // current character as visited.
-                else {
-                    res = Math.max(res, j - i + 1);
-                    visited[str.charAt(j)] = true;
-                }
+            } else {
+                //temp -= s.charAt(i);
+                // temp = "";
+                n = temp.indexOf(s.charAt(i));
+                temp = temp.substring(n + 1);
+                temp += s.charAt(i);
             }
-
-            // Remove the first character of previous
-            // window
-            visited[str.charAt(i)] = false;
         }
-        return longestSubstring;
+        return answer.length();
     }
-}
+
+    }
+
