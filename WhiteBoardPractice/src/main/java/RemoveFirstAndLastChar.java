@@ -9,4 +9,9 @@ public class RemoveFirstAndLastChar {
         String result = str.substring(1, str.length()-1);
         return result;
     }
+
+    public static void main(String[] args) {
+        String input = "The quick brown";
+        System.out.println(removeFirstAndLastChar(input));
+    }
 }
