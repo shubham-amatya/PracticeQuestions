@@ -7,7 +7,12 @@ public class IntegerInput {
 
     public static int sumTilli(int n){
 
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += i;
 
-        return
+        }
+
+        return sum;
     }
 }
