@@ -12,7 +12,6 @@ public class IntegerInput {
             sum += i;
 
         }
-
         return sum;
     }
 }
