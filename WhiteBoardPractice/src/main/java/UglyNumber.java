@@ -6,6 +6,14 @@ public class UglyNumber {
 
 
     public static boolean uglyNumberFinder(int num){
-
+        if (num==1){
+            return true;
+        }
+        if(num%2==0 || num%3==0 || num %5==0){
+            return true;
+        }
+        return false;
     }
+
+
 }
