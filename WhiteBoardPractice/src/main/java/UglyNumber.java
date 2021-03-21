@@ -9,11 +9,15 @@ public class UglyNumber {
         if (num==1){
             return true;
         }
-        if(num%2==0 || num%3==0 || num %5==0){
+        if((num%2==0 || num%3==0 || num %5==0) ){
             return true;
         }
         return false;
     }
 
+    public static void main(String[] args) {
+        int n = 14;
+        System.out.println(uglyNumberFinder(n));
+    }
 
 }
